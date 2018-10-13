@@ -1,8 +1,11 @@
 czy_laptop = 0
+my_system = 'MacOS' # MacOS, Windows
+my_system = 'Windows'
 from tkinter import *
 import glob
 import os
 from playsound import playsound
+
 # import winsound
 # import Pmw
 
@@ -59,13 +62,23 @@ alphabet += alphabet.upper()
 # subprocess.call('"C:\Program Files (x86)\Microsoft Office\OFFICE11"\OIS.EXE "D:\Marek\Chinskie\Chinese_chars\Program\a.jpg"')
 # os.system('a.jpg')
 
+SystemWindowText = 'SystemWindowText'
+SystemWindow = 'SystemWindow'
+SystemButtonText = 'SystemButtonText'
+SystemButtonFace = 'SystemButtonFace'
+if my_system == 'MacOS':
+    SystemWindowText = 'SystemButtonText'
+    SystemWindow = 'SystemWindowBody'
+#SystemButtonFace = 'SystemButtonFace'
+
 def printPaint (znak, mspaint=0):
   global mw
   read_wubi(dir_wubi, znak, exten = 'png')
   mw.clipboard_clear()
   # print (znak)
   if mspaint:
-    mw.clipboard_append('mspaint ' + znak_forPaint)
+      #    mw.clipboard_append('mspaint ' + znak_forPaint)
+        mw.clipboard_append('open ' + znak_forPaint)
   else:
     mw.clipboard_append(znak_forPaint)
 
@@ -296,7 +309,8 @@ def my_play(name):
   if os.path.isfile(name): 
     # print (name)
 #    winsound.PlaySound(name,winsound.SND_FILENAME)
-    playsound(name)
+#    playsound(name)
+    os.system('afplay ' + name)
   
 def create_gifa(window,gif_i, i):
   global var_play
@@ -366,7 +380,7 @@ def create_gifa(window,gif_i, i):
   kill(fText)
   for n in ('jiagu', 'jin', 'jianbo', 'seal'):
     name = get_file(dir_ctext + '/' + n, i)
-    lab = Label(fText,text=i,font=12)
+    lab = Label(fText,text=i)
     if os.path.isfile(name):
       myimage = PhotoImage(file=name)
       lab.image = myimage
@@ -383,7 +397,8 @@ def create_gifa(window,gif_i, i):
     name = os.path.normpath(get_file(mydir,i,'.png'))  
   if not os.path.isfile(name): name = ''
 
-  Button(fText, text=i, font = fontKaiti + ' 28', command = lambda name=name: os.system(name)).pack(side='left')
+  Button(fText, text=i, font = fontKaiti + ' 28', command = lambda
+         name=name: os.system('open ' + name)).pack(side='left')
 
   Button(fText, text='\u266a', width = 3, font = fontKaiti + ' 28', command = lambda name=wymowa[i]: my_play(name)).pack(side='left')
   
@@ -480,14 +495,16 @@ def hide_napis(fbuttons,text,new_creation = 0):
   # SystemHighlightText, SystemMenu, SystemMenuActive, SystemMenuActiveText, 
   # SystemMenuDisabled, SystemMenuText, SystemWindowBody.
 
-  if new_creation or text.cget('foreground') != 'SystemWindowText':
+
+
+  if new_creation or text.cget('foreground') != SystemWindowText:
     hidden = 1
   # SystemWindow, SystemWindowText
 
   if hidden: 
-    text.config(foreground= 'SystemWindowText')
+    text.config(foreground= SystemWindowText)
   else: 
-    text.config(foreground = 'SystemWindow')
+    text.config(foreground = SystemWindow)
     napis1.delete('1.0','1.end')
     
   
@@ -500,9 +517,9 @@ def hide_napis(fbuttons,text,new_creation = 0):
 #              button.config(foreground='red')
               # == 'systemButtonFace', 'systemButtonText'
                if hidden:
-                 button.config(foreground = 'systemButtonText')
+                 button.config(foreground = SystemButtonText)
                else: 
-                 button.config(foreground = 'systemButtonFace')
+                 button.config(foreground = SystemButtonFace)
 #              print (button.cget('background')) # == 'systemButtonFace', 'systemButtonText'
 #              print (button.cget('foreground'))
           break
@@ -576,7 +593,7 @@ gif_image = Label(f); gif_image.pack(side='left',anchor='n')
 orig_color = gif_image.cget('background')
 # -------------------------------------------------------- przyciski poleceń
 f = Frame(mw); f.pack()
-Button(f,text='exit',font = 18,width=6,command=lambda: exit()).pack(side='left')
+Button(f,text='exit',font = '18',width=6,command=lambda: exit()).pack(side='left')
 Button(f,text='create',font = 18,width=8,command=lambda: create_napis(frameButtons,gif_image,napis)
    ).pack(side='left')
 Button(f,text='hide',font = 18,width=8,command=lambda: hide_napis(frameButtons,napis)
@@ -615,9 +632,9 @@ opisy = Frame(mw); opisy.pack(fill='both',expand=1)
 # -------------------------------------------------------- opisy lewe
 opisyLeft = Frame(opisy); opisyLeft.pack(fill='x',side='left')
 fDodaj = Frame(opisyLeft); fDodaj.pack(fill='x', expand=1) #,side='left')
-fText = Frame(opisyLeft); fText.pack(anchor='w')
+fText = Frame(opisyLeft); fText.pack(anchor='nw')
 fFonts= Frame(opisyLeft); fFonts.pack(anchor='w')
-for n in ('金文大篆体', '汉仪篆书繁', '经典繁方篆', 'HanWangYenLight', 'HanWangKanTan', 
+for n in ('汉仪篆书繁', '经典繁方篆', 'HanWangYenLight', 'HanWangKanTan', 
      'HanWangWCL07', 'HanWangShinSuMedium', ):
   Label(fFonts,font = n + ' 38').pack(side='left',anchor='w')
 lSlownik = Label(opisyLeft,font = 'Times 18',padx=2); lSlownik.pack(anchor='w')
