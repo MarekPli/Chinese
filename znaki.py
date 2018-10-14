@@ -1,12 +1,12 @@
 czy_laptop = 0
-my_system = 'MacOS' # MacOS, Windows
+# my_system = 'MacOS' # MacOS, Windows
 my_system = 'Windows'
 from tkinter import *
 import glob
 import os
-from playsound import playsound
+# from playsound import playsound
 
-# import winsound
+import winsound
 # import Pmw
 
 # Pmw.initialise()
@@ -308,9 +308,11 @@ def my_play(name):
   name = dir_wav + '/'+ name + '.wav'
   if os.path.isfile(name): 
     # print (name)
-#    winsound.PlaySound(name,winsound.SND_FILENAME)
-#    playsound(name)
-    os.system('afplay ' + name)
+    if my_system == 'Windows':
+      winsound.PlaySound(name,winsound.SND_FILENAME)
+#     playsound(name)
+    elif my_system == 'MacOS':
+      os.system('afplay ' + name)
   
 def create_gifa(window,gif_i, i):
   global var_play
