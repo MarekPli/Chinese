@@ -4,9 +4,9 @@ my_system = 'Windows'
 from tkinter import *
 import glob
 import os
-# from playsound import playsound
-
-import winsound
+# from playsound import
+if my_system =='Windows':
+  import winsound
 # import Pmw
 
 # Pmw.initialise()
@@ -582,7 +582,6 @@ for line in fi:
 fi.close()
 
 mw = Tk()
-mw.state('zoomed')
 # -------------------------------------------------------- teksty - pola do wpisywania
 napis = Text(mw,font = 'SimSun 38',height = 1); napis.pack(fill=X)
 napis1 = Text(mw,font = 'SimSun 38',height = 1); napis1.pack(fill='x')
@@ -595,15 +594,18 @@ gif_image = Label(f); gif_image.pack(side='left',anchor='n')
 orig_color = gif_image.cget('background')
 # -------------------------------------------------------- przyciski poleceń
 f = Frame(mw); f.pack()
-Button(f,text='exit',font = '18',width=6,command=lambda: exit()).pack(side='left')
-Button(f,text='create',font = 18,width=8,command=lambda: create_napis(frameButtons,gif_image,napis)
+button_size = '18'
+if my_system == 'MacOS':
+  button_size = '48'
+Button(f,text='exit',font = button_size,width=6,command=lambda: exit()).pack(side='left')
+Button(f,text='create',font = button_size,width=8,command=lambda: create_napis(frameButtons,gif_image,napis)
    ).pack(side='left')
-Button(f,text='hide',font = 18,width=8,command=lambda: hide_napis(frameButtons,napis)
+Button(f,text='hide',font = button_size,width=8,command=lambda: hide_napis(frameButtons,napis)
    ).pack(side='left')
-Button(f,text='>>',font = 18,width=4,command=lambda: hop_forward()).pack(side='left')
-Button(f,text='<<',font = 18,width=4,command=lambda: hop_forward(-1)).pack(side='left')
+Button(f,text='>>',font = button_size,width=4,command=lambda: hop_forward()).pack(side='left')
+Button(f,text='<<',font = button_size,width=4,command=lambda: hop_forward(-1)).pack(side='left')
 image_klaw = PhotoImage(file = klawiatura)
-Button(f,text='\u0037',font = "Wingdings 16",command=lambda: show_klawiatura(image_klaw)).pack(side='left',fill=Y)
+Button(f,text='\u0037',font = "Wingdings 18",command=lambda: show_klawiatura(image_klaw)).pack(side='left',fill=Y)
 var_wubi = BooleanVar()
 var_wubi.set(False)
 Checkbutton(f,text="\u4e94\u7b14",font = "SimSun 16", width = 4, variable = var_wubi, indicatoron=0, 
@@ -611,18 +613,18 @@ Checkbutton(f,text="\u4e94\u7b14",font = "SimSun 16", width = 4, variable = var_
   command = lambda: image_show(znak_wybrany)).pack(side='left',fill=Y)
 var_play = BooleanVar()
 var_play.set(False)
-Checkbutton(f,text='\u266a',indicatoron=0,font = 18,width = 3,
+Checkbutton(f,text='\u266a',indicatoron=0,font = button_size,width = 3,
    selectcolor = 'SystemButtonFace',
    variable = var_play).pack(side='left',fill=Y)
-Button(f,text='\u266b', font = 18, width = 3, command = lambda: play_all(napis)).pack(side='left',fill=Y)
+Button(f,text='\u266b', font = button_size, width = 3, command = lambda: play_all(napis)).pack(side='left',fill=Y)
 var_showall = BooleanVar()
 var_showall.set(True)
 var_tradsimp = BooleanVar()
 var_tradsimp.set(False)
-Checkbutton(f,text='Tr/Simp',indicatoron=0,font = 18,
+Checkbutton(f,text='Tr/Simp',indicatoron=0,font = button_size,
    selectcolor = 'SystemButtonFace',
    variable = var_tradsimp, command = lambda: create_napis(frameButtons,gif_image,napis)).pack(side='left',fill=Y)
-Checkbutton(f,text='Show all',indicatoron=0,font = 18,
+Checkbutton(f,text='Show all',indicatoron=0,font = button_size,
    selectcolor = 'SystemButtonFace',
    variable = var_showall, command = lambda: showall_me()).pack(side='left',fill=Y)
 f = Frame(f); f.pack(side=RIGHT, expand=1,fill=X,anchor=W)
@@ -636,9 +638,17 @@ opisyLeft = Frame(opisy); opisyLeft.pack(fill='x',side='left')
 fDodaj = Frame(opisyLeft); fDodaj.pack(fill='x', expand=1) #,side='left')
 fText = Frame(opisyLeft); fText.pack(anchor='nw')
 fFonts= Frame(opisyLeft); fFonts.pack(anchor='w')
-for n in ('汉仪篆书繁', '经典繁方篆', 'HanWangYenLight', 'HanWangKanTan', 
-     'HanWangWCL07', 'HanWangShinSuMedium', ):
-  Label(fFonts,font = n + ' 38').pack(side='left',anchor='w')
+if my_system == 'MacOS':
+  for n in ('STBaoliSC-Regular', 'STLibianSC-Regular',
+            'WeibeiSC-Bold', 'DFKaiShu-SB-Estd-BF',
+            'STKaitiTC-Regular', 'STXingkaiTC-Light',
+            'MLingWaiMedium-SC',):
+    Label(fFonts,font = n + ' 88').pack(side='left',anchor='w')
+if my_system == 'Windows':
+  for n in ('汉仪篆书繁', '经典繁方篆', 'HanWangYenLight', 'HanWangKanTan', 
+       'HanWangWCL07', 'HanWangShinSuMedium', ):
+    Label(fFonts,font = n + ' 38').pack(side='left',anchor='w')
+
 lSlownik = Label(opisyLeft,font = 'Times 18',padx=2); lSlownik.pack(anchor='w')
 frameHex = Frame(opisyLeft); frameHex.pack(anchor=W);
 lHexag = Text(frameHex,width=5, height=1); lHexag.pack(anchor=W,side=LEFT,fill=Y);
@@ -670,4 +680,5 @@ napis.bind('<F8>', lambda event: hop_forward(-1) ) # next_klawiatura(lab))
 napis.bind('<F9>', lambda event: hop_forward() ) # next_klawiatura(lab,1))
 napis1.bind('<F8>', lambda event: hop_forward(-1) ) # next_klawiatura(lab))
 napis1.bind('<F9>', lambda event: hop_forward() ) # next_klawiatura(lab,1))
+mw.state('zoomed')
 mainloop()
