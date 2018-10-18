@@ -1,4 +1,3 @@
-czy_laptop = 0
 # my_system = 'MacOS' # MacOS, Windows
 my_system = 'Windows'
 from tkinter import *
@@ -10,26 +9,19 @@ if my_system =='Windows':
 # import Pmw
 
 # Pmw.initialise()
-if czy_laptop:
-  gify_dir = 'Wubi_gifs/'
-#  ctext_dir = '../../chiny/ctext'
-  dir_ctext = 'ctext'
-  dir_arch = 'Arch'
-  dir_arch2 = 'Arch2'
-else:
-  Sources = 'Sources'
-  Dirs = 'Dirs'
-  Files = 'Files'
-  SoDi = Sources + '/' + Dirs + '/'
-  SoFi = Sources + '/' + Files + '/'
-  dir_ctext    = SoDi + 'seals'
-  dir_arch     = SoDi + 'arch'
-  dir_fenbu    = SoDi + 'fenbu'
-  dir_arch2    = SoDi + 'arch/Nowe'
-  dir_arch3    = SoDi + 'arch/Yellow_Bridge'
-  dir_wav      = SoDi + 'wav'
-  dir_wubi_gif = SoDi + 'wubi_gif/'
-  dir_wubi =     SoDi + 'wubi/'
+Sources = 'Sources'
+Dirs = 'Dirs'
+Files = 'Files'
+SoDi = Sources + '/' + Dirs + '/'
+SoFi = Sources + '/' + Files + '/'
+dir_ctext    = SoDi + 'seals'
+dir_arch     = SoDi + 'arch'
+dir_fenbu    = SoDi + 'fenbu'
+dir_arch2    = SoDi + 'arch/Nowe'
+dir_arch3    = SoDi + 'arch/Yellow_Bridge'
+dir_wav      = SoDi + 'wav'
+dir_wubi_gif = SoDi + 'wubi_gif/'
+dir_wubi =     SoDi + 'wubi/'
 
 #  arch_dir_jpg = 'D:/Marek/Chinskie/Arch_Jpg/'
   
