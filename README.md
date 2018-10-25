@@ -5,7 +5,6 @@ Program for learn and train Chinese characters.
 * [Technologies](#technologies)
 * [Screenshot](#Screenshot)
 * [How to use](#How-to-use)
-* [Meaning list](#Meaning-list)
 * [Sources](#Sources)
 
 ## General info
@@ -24,6 +23,7 @@ Project is created with:
 ![Screenshot](./Images_git/Image_screen.png)
 
 ## How to use
+### About buttons
 You can write a Chinese text or copy it from an outer source. If you like, you could press
 the last button in the bar, and the "Thousand Characters Classic" would be read from 
 external file. 
@@ -45,14 +45,15 @@ would be available by buttons.
 By press an added button below, a picture of a character would be shown (using 
 a program from operation system).
 
-## Meaning list
+At the bottom, several original pictures of character in different fonts is showed.
+
+### Meaning list
 There is a double meaning list: two sub-lists are created.
 
 First one, information of a character and its content. 
 
 The second, words that include chosen character. is my own collection of characters and words from different sources, 
 including handbooks. Program reads a file (not included here).
-
 
 Using "Add" (Polish "Dodaj") you can add all the characters used in the first or the 
 second sub-list.
