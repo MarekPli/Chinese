@@ -19,8 +19,8 @@ Pictures are only examples, vocabulary and pictures are in files not included, a
 ## Technologies
 Project is created with:
 * Python 3.7.0
-* with tkinter
-* and also winsound for Windows
+* ... with tkinter
+* ... and also winsound for Windows
 
 ## How to use
 ### About buttons
