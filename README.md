@@ -69,7 +69,7 @@ to reach a picture of a character.
 
 ## Sources
 [@Arch Chinese](http://www.archchinese.com/chinese_english_dictionary.html) -
-my_system = 'Windows'Pictures of font and Chinese pronounciation files are available 
+Pictures of font and Chinese pronounciation files are available 
 from here
 
 [@Zdic](http://www.zdic.net) - Wubi code
