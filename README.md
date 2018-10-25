@@ -3,7 +3,7 @@ Program for learn and train Chinese characters
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [Screenshot](#Screeshot)
+* [Screenshot](#Screenshot)
 * [How to use](#How-to-use)
 * [Sources](#Sources)
 
