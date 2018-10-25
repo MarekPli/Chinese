@@ -23,6 +23,12 @@ Project is created with:
 * ... and also winsound for Windows
 
 ## How to use
+### Windows or MacOs
+You can choose your system in first line, using:
+`my_system = 'Windows'`
+or
+`my_system = 'MacOs'`
+
 ### About buttons
 You can write a Chinese text or copy it from an outer source. If you like, you could press
 the last button in the bar, and the "Thousand Characters Classic" would be read from 
