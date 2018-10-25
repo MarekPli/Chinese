@@ -1,10 +1,11 @@
 # Chinese Characters
-Program for learn and train Chinese characters
+Program for learn and train Chinese characters.
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Screenshot](#Screenshot)
 * [How to use](#How-to-use)
+* [Meaning list](#Meaning-list)
 * [Sources](#Sources)
 
 ## General info
@@ -41,10 +42,23 @@ a button. You can hide some informations using Hide.
 If you press Tr/Simp (Traditional/Simple), both tratitional and simple (modern) form of sign
 would be available by buttons.
 
-Meaning list: my own collection of characters and words from different sources, 
-including handbooks. All words with chosen character are shown.
+By press an added button below, a picture of a character would be shown (using 
+a program from operation system).
 
-You can shorten a meaning list to three lines, if Show all button is inactive.
+## Meaning list
+There is a double meaning list: two sub-lists are created.
+
+First one, information of a character and its content. 
+
+The second, words that include chosen character. is my own collection of characters and words from different sources, 
+including handbooks. Program reads a file (not included here).
+
+
+Using "Add" (Polish "Dodaj") you can add all the characters used in the first or the 
+second sub-list.
+
+You can shorten sub-lists to three lines each, if Show all button is inactive. It can be done
+to reach a picture of a character.
 
 ## Sources
 Pictures of font and Chinese pronounciation files are available 
