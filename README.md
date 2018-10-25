@@ -4,7 +4,7 @@ Program for learn and train Chinese characters
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Screenshot](#Screeshot)
-* [How to use](#How to use)
+* [How to use](#How-to-use)
 * [Sources](#Sources)
 
 ## General info
