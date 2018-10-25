@@ -2,8 +2,8 @@
 Program for learn and train Chinese characters.
 ## Table of contents
 * [General info](#general-info)
-* [Technologies](#technologies)
 * [Screenshot](#Screenshot)
+* [Technologies](#technologies)
 * [How to use](#How-to-use)
 * [Sources](#Sources)
 
@@ -13,14 +13,14 @@ Chinese words and receive any information, like writing or pronounciation as mea
 
 Pictures are only examples, vocabulary and pictures are in files not included, as fonts are.
 	
+## Screenshot
+![Screenshot](./Images_git/Image_screen.png)
+
 ## Technologies
 Project is created with:
 * Python 3.7.0
 * with tkinter
 * and also winsound for Windows
-	
-## Screenshot
-![Screenshot](./Images_git/Image_screen.png)
 
 ## How to use
 ### About buttons
