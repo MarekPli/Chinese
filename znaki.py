@@ -639,7 +639,7 @@ if my_system == 'MacOS':
 if my_system == 'Windows':
   for n in ('汉仪篆书繁', '经典繁方篆', 'HanWangYenLight', 'HanWangKanTan', 
        'HanWangWCL07', 'HanWangShinSuMedium', ):
-    Label(fFonts,font = n + ' 38').pack(side='left',anchor='w')
+    Label(fFonts,font = (n, '38')).pack(side='left',anchor='w')
 
 lSlownik = Label(opisyLeft,font = 'Times 18',padx=2); lSlownik.pack(anchor='w')
 frameHex = Frame(opisyLeft); frameHex.pack(anchor=W);
@@ -674,3 +674,4 @@ napis1.bind('<F8>', lambda event: hop_forward(-1) ) # next_klawiatura(lab))
 napis1.bind('<F9>', lambda event: hop_forward() ) # next_klawiatura(lab,1))
 mw.state('zoomed')
 mainloop()
+# https://github.com/MarekPli/Chinese
