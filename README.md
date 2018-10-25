@@ -55,8 +55,8 @@ First one, information of a character and its content.
 The second, words that include chosen character. is my own collection of characters and words from different sources, 
 including handbooks. Program reads a file (not included here).
 
-Using "Add" (Polish "Dodaj") you can add all the characters used in the first or the 
-second sub-list.
+Using "Add" (Polish "Dodaj") you can add to the line all the characters used in the first or the 
+second sub-list. Proposals are only characters absent in the line.
 
 You can shorten sub-lists to three lines each, if Show all button is inactive. It can be done
 to reach a picture of a character.
