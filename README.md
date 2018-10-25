@@ -68,8 +68,9 @@ You can shorten sub-lists to three lines each, if Show all button is inactive. I
 to reach a picture of a character.
 
 ## Sources
-Pictures of font and Chinese pronounciation files are available 
-from: [@Arch Chinese](http://www.archchinese.com/chinese_english_dictionary.html)
+[@Arch Chinese](http://www.archchinese.com/chinese_english_dictionary.html) -
+my_system = 'Windows'Pictures of font and Chinese pronounciation files are available 
+from here
 
-Wubi code: [@Zdic](http://www.zdic.net)
+[@Zdic](http://www.zdic.net) - Wubi code
 
