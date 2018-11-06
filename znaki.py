@@ -619,8 +619,8 @@ Checkbutton(f,text='Tr/Simp',indicatoron=0,font = button_size,
 Checkbutton(f,text='Show all',indicatoron=0,font = button_size,
    selectcolor = 'SystemButtonFace',
    variable = var_showall, command = lambda: showall_me()).pack(side='left',fill=Y)
-f = Frame(f); f.pack(side=RIGHT, expand=1,fill=X,anchor=W)
-Button(f,text='nowe', command = lambda: read_file_with()).pack(side='right',anchor=N,expand=1,fill=BOTH)
+f = Frame(f); f.pack(side=RIGHT, expand=1,fill=Y,anchor=W)
+Button(f,text='Text from file', command = lambda: read_file_with()).pack(side='right',anchor=N,expand=1,fill=BOTH)
 # -------------------------------------------------------- teksty definicji i znaczenia
 teF = Text(mw,background = orig_color,font = 'SimSun 18',wrap='word',height=2); teF.pack(fill='x')
 teS = Text(mw,background = orig_color,font = 'SimSun 18',wrap='word',height=2); teS.pack(fill='x')
