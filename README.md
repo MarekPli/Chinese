@@ -10,6 +10,7 @@ Program for learn and train Chinese characters.
 ## General info
 Program for learn and exercise Chinese characters. You can write (or copy Ctrl-v) 
 Chinese words and receive any information, like writing or pronounciation as meaning as well.
+Then use "Create" button and all the characters are revealed.
 
 Pictures are only examples, vocabulary and pictures are in files not included, as fonts are.
 	
